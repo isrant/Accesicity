@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getAllIncidenciasService } from "../services";
 
 const useIncidencias = () => {
-  const [incidencias, setIncidencias] = useState([]); //primer valor del stado y segunda funcion para actualizar el estado
+  const [incidencias, setIncidencias] = useState([]); //primer valor del estado y segunda funcion para actualizar el estado
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 

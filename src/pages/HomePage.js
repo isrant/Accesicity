@@ -8,11 +8,10 @@ export const Homepage = () => {
   if (loading) return <p>cargando incidencias...</p>;
   if (error) return <ErrorMessage message={error}/>; 
 
-  console.log(incidencias);
-
   return (
     <section>
       <h1>INCIDENCIAS</h1>
+      
       <IncidenciasList incidencias={incidencias}/>
     </section>
   );
