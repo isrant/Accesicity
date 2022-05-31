@@ -1,18 +1,18 @@
 import { ErrorMessage } from "../components/ErrorMessage";
-import { IncidenciasList } from "../components/IncidenciasList";
+import { IncidenciaList } from "../components/IncidenciaList";
 import useIncidencias from "../hooks/useIncidencias";
 
 export const Homepage = () => {
   const { incidencias, loading, error } = useIncidencias();
 
   if (loading) return <p>cargando incidencias...</p>;
-  if (error) return <ErrorMessage message={error}/>; 
+  if (error) return <ErrorMessage message={error} />;
 
   return (
     <section>
       <h1>INCIDENCIAS</h1>
-      
-      <IncidenciasList incidencias={incidencias}/>
+
+      <IncidenciaList incidencias={incidencias} />
     </section>
   );
 };

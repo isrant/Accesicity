@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { ErrorMessage } from "../components/ErrorMessage";
-import { Incidencias } from "../components/incidencias";
+import { Incidencia } from "../components/Incidencia";
 import useIncidencia from "../hooks/useIncidencia";
 
 export const IncidenciaPage = () => {
@@ -13,8 +13,8 @@ export const IncidenciaPage = () => {
 
   return (
     <section>
-      <h1>INCIDENCIAS</h1>
-      <Incidencias incidencia={incidencia} />
+      <h1>INCIDENCIA</h1>
+      <Incidencia incidencia={incidencia} />
     </section>
   );
 };
