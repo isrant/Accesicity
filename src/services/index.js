@@ -23,7 +23,7 @@ export const getSingleIssueService = async (id) => {
 };
 
 export const registerUserService = async ({ username, email, password }) => {
-  const response = await fetch(`${process.env.REACT_APP_BACKEND}/user`, {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/user/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -57,7 +57,7 @@ export const loginUserService = async ({ username, email, password }) => {
 };
 
 export const getMyUserDataService = async ({ token }) => {
-  const response = await fetch(`${process.env.REACT_APP_BACKEND}/user`, {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/user/`, {
     headers: {
       Authorization: token,
     },
