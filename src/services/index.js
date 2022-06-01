@@ -1,4 +1,4 @@
-export const getAllIncidenciasService = async () => {
+export const getAllIssuesService = async () => {
   const response = await fetch(`${process.env.REACT_APP_BACKEND}`);
 
   const json = await response.json();
@@ -10,10 +10,8 @@ export const getAllIncidenciasService = async () => {
   return json.data;
 };
 
-export const getSingleIncidenciaService = async (id) => {
-  const response = await fetch(
-    `${process.env.REACT_APP_BACKEND}/incidencia/${id}`
-  );
+export const getSingleIssueService = async (id) => {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/issue/${id}`);
 
   const json = await response.json();
 

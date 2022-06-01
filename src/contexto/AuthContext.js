@@ -23,7 +23,7 @@ export const AuthProviderComponent = ({ children }) => {
 
     if (token) getUserData();
   }, [token]);
-  
+
   const login = (token) => {
     setToken(token);
   };

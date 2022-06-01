@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
 import { ErrorMessage } from "../components/ErrorMessage";
-import { Incidencia } from "../components/Incidencia";
-import useIncidencia from "../hooks/useIncidencia";
+import { Issue } from "../components/Issue";
+import useIssue from "../hooks/useIssue";
 
-export const IncidenciaPage = () => {
+export const IssuePage = () => {
   const { id } = useParams();
 
-  const { incidencia, loading, error } = useIncidencia(id);
+  const { issue, loading, error } = useIssue(id);
 
   if (loading) return <p>cargando incidencia...</p>;
   if (error) return <ErrorMessage message={error} />;
@@ -14,7 +14,7 @@ export const IncidenciaPage = () => {
   return (
     <section>
       <h1>INCIDENCIA</h1>
-      <Incidencia incidencia={incidencia} />
+      <Issue issue={issue} />
     </section>
   );
 };
