@@ -18,6 +18,9 @@ export const Auth = () => {
       <li>
         <Link to="/login">Login</Link>{" "}
       </li>
+      <li>
+        <Link to="/logOut">Desonectarse</Link>{" "}
+      </li>
     </ul>
   );
 };

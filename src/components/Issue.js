@@ -7,7 +7,7 @@ export const Issue = ({ issue }) => {
 
       {issue.image ? (
         <img
-          src={`${process.env.REACT_APP_BACKEND}/uploads/${issue.image}`}
+          src={`${process.env.REACT_APP_BACKEND}/upload/${issue.image}`}
           alt={issue.tittle}
         />
       ) : null}
