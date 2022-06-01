@@ -1,5 +1,5 @@
 export const getAllIssuesService = async () => {
-  const response = await fetch(`${process.env.REACT_APP_BACKEND}`);
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/issues`);
 
   const json = await response.json();
 
