@@ -5,10 +5,10 @@ import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 
 import { Homepage } from "./pages/HomePage";
-import { RegisterPage } from "./pages/registerPage";
+import { RegisterPage } from "./pages/RegisterPage";
 import { LoginPage } from "./pages/LoginPage";
-import { IncidenciaPage } from "./pages/IncidenciaPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
+import { IssuePage } from "./pages/IssuePage";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/incidencia/:id" element={<IncidenciaPage />} />
+        <Route path="/issue/:id" element={<IssuePage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />

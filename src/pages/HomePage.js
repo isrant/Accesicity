@@ -1,18 +1,24 @@
+import { useContext } from "react";
 import { ErrorMessage } from "../components/ErrorMessage";
-import { IncidenciasList } from "../components/IncidenciasList";
-import useIncidencias from "../hooks/useIncidencias";
+import { IssueList } from "../components/IssueList";
+import { NewIssue } from "../components/NewIssue";
+import { AuthContext } from "../contexto/AuthContext";
+import useIssues from "../hooks/useIssues";
 
 export const Homepage = () => {
-  const { incidencias, loading, error } = useIncidencias();
+  const { issues, loading, error } = useIssues();
+  const { user } = useContext(AuthContext);
 
   if (loading) return <p>cargando incidencias...</p>;
-  if (error) return <ErrorMessage message={error}/>; 
+  if (error) return <ErrorMessage message={error} />;
 
   return (
     <section>
       <h1>INCIDENCIAS</h1>
-      
-      <IncidenciasList incidencias={incidencias}/>
+
+{user ? <NewIssue />:null }
+
+      <IssueList issues={issues} />
     </section>
   );
 };
