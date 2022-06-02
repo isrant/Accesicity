@@ -51,6 +51,7 @@ export const loginUserService = async ({ username, email, password }) => {
 
   if (!response.ok) {
     throw new Error(json.message);
+    console.log("Error", Error);
   }
 
   return json.data;
