@@ -4,15 +4,15 @@ import { registerUserService } from "../services";
 
 export const RegisterPage = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [pass1, setPass1] = useState("");
   const [pass2, setPass2] = useState("");
   const [error, setError] = useState("");
 
   const handleForm = async (e) => {
     e.preventDefault();
-    setError("");
+    //setError("");
 
     if (pass1 !== pass2) {
       setError("Las Password no son iguales");
@@ -24,6 +24,7 @@ export const RegisterPage = () => {
 
       navigate("/login");
     } catch (error) {
+      console.log(error); // pq con solo error sí vemos el error en consola pero error.message no aparece nada??? Ojo( en postman pone error:error no status:error)
       setError(error.messsage);
     }
   };
@@ -35,7 +36,7 @@ export const RegisterPage = () => {
         <fieldset>
           <label htmlFor="username">Username</label>
           <input
-            type="username"
+            type="text"
             id="username"
             name="username"
             required
