@@ -5,15 +5,16 @@ import useIssue from "../hooks/useIssue";
 
 export const IssuePage = () => {
   const { id } = useParams();
+  console.log(id);
 
   const { issue, loading, error } = useIssue(id);
 
-  if (loading) return <p>cargando incidencia...</p>;
+  if (loading) return <p>Cargando incidencia...</p>;
   if (error) return <ErrorMessage message={error} />;
 
   return (
     <section>
-      <h1>INCIDENCIA</h1>
+      <h1>INCIDENCIA DE ACCESIBILIDAD</h1>
       <Issue issue={issue} />
     </section>
   );

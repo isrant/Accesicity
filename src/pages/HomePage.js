@@ -14,9 +14,9 @@ export const Homepage = () => {
 
   return (
     <section>
-      <h1>INCIDENCIAS</h1>
+      <h1>INCIDENCIAS DE ACCESIBILIDAD REGISTRADAS</h1>
 
-{user ? <NewIssue />:null }
+      {user ? <NewIssue /> : null}
 
       <IssueList issues={issues} />
     </section>
