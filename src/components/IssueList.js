@@ -10,6 +10,6 @@ export const IssueList = ({ issues }) => {
       ))}
     </ul>
   ) : (
-    <p> todavía no hay incidencias...</p>
+    <p> Todavía no hay incidencias...</p>
   );
 };
