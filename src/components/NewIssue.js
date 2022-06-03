@@ -1,16 +1,24 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../contexto/AuthContext";
+import { sendIssueService } from "../services";
 
-export const NewIssue = () => {
+export const NewIssue = ({ addIssue }) => {
   const [error, setError] = useState("");
-  const { enviando, setEnviando } = useState(false);
-
+  const [enviando, setEnviando] = useState(false);
+  const [image, setImage] = useState(null);
+  const { token } = useContext(AuthContext);
   const handleForm = async (e) => {
     e.preventDeFault();
 
     try {
       setEnviando(true);
 
-      const data=new FormData(e.target);
+      const data = new FormData(e.target);
+      const issue = await sendIssueService({ data, token });
+
+      addIssue(issue);
+      e.target.reset();
+      setImage(null);
     } catch (error) {
       setError(error.message);
     } finally {
@@ -39,12 +47,23 @@ export const NewIssue = () => {
         <input type="text" id="text" name="text" required />
       </fieldset>
       <fieldset>
-        <label htmlFor="text">Barrio</label>
-        <input type="text" id="hood" name="hood" required />
-      </fieldset>
-      <fieldset>
         <label htmlFor="image">Imagen (Opcional)</label>
-        <input type="file" id="image" name="image" />
+        <input
+          type="file"
+          id="image"
+          name="image"
+          accept="image/*"
+          onChange={(e) => setImage(e.target.files[0])}
+        />
+        {image ? (
+          <figure>
+            <img
+              src={URL.createObjectURL(image)}
+              alt="preview"
+              style={{ width: "100px" }}
+            />
+          </figure>
+        ) : null}
       </fieldset>
 
       <button>Enviar Incidencia</button>
