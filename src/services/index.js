@@ -51,14 +51,13 @@ export const loginUserService = async ({ username, email, password }) => {
 
   if (!response.ok) {
     throw new Error(json.message);
-    console.log("Error", Error);
   }
 
   return json.data;
 };
 //hay que modificar la api para cambiar /user/1 por /user myuser
 export const getMyUserDataService = async ({ token }) => {
-  const response = await fetch(`${process.env.REACT_APP_BACKEND}/user/1`, {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/user`, {
     headers: {
       Authorization: token,
     },
@@ -71,7 +70,7 @@ export const getMyUserDataService = async ({ token }) => {
 };
 
 export const sendIssueService = async ({ data, token }) => {
-  const response = await fetch(`${process.env.REACT_APP_BACKEND}`, {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/issue`, {
     method: "POST",
     body: data,
     headers: {

@@ -7,7 +7,7 @@ export const Auth = () => {
 
   return user ? (
     <p>
-      el usuario está conectado como {user.email}{" "}
+      el usuario está conectado como {user.username}{" "}
       <button onClick={() => logout()}>Desconectarse</button>
     </p>
   ) : (
@@ -17,9 +17,6 @@ export const Auth = () => {
       </li>
       <li>
         <Link to="/login">Login</Link>{" "}
-      </li>
-      <li>
-        <Link to="/logOut">Desconectarse</Link>{" "}
       </li>
     </ul>
   );
